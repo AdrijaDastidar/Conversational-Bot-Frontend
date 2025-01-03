@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  .animate-bounce-in {
+    animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .animate-typing {
+    animation: typing 1s infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  .animate-background {
+    animation: moveBackground 15s ease infinite;
+  }
+
+  .gradient-border {
+    position: relative;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(to right, #FF0080, #7928CA) border-box;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+  }
+
+  .bg-gradient-animated {
+    background: linear-gradient(
+      45deg,
+      #ff006a,
+      #ff0080,
+      #d900ff,
+      #f700ff,
+      #ff00e1
+    );
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  .floating-shapes::before,
+  .floating-shapes::after {
+    content: '';
+    position: fixed;
+    width: 60vmax;
+    height: 60vmax;
+    border-radius: 50%;
+    mix-blend-mode: soft-light;
+    animation: moveShapes 20s linear infinite;
+    pointer-events: none;
+  }
+
+  .floating-shapes::before {
+    background: rgba(255, 0, 128, 0.723);
+    top: -30vmax;
+    left: -30vmax;
+    animation-delay: -5s;
+  }
+
+  .floating-shapes::after {
+    background: rgba(179, 0, 255, 0.763);
+    bottom: -30vmax;
+    right: -30vmax;
+    animation-delay: -10s;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(0.89);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes typing {
+  0% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 0.8; transform: scale(1.2); }
+  100% { opacity: 0.2; transform: scale(0.8); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 5px rgba(246, 93, 231, 0.74); }
+  50% { box-shadow: 0 0 20px rgba(255, 66, 117, 0.6); }
+  100% { box-shadow: 0 0 5px rgba(226, 2, 255, 0.509); }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes moveShapes {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.rainbow-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color:rgb(11, 0, 80);
+  background-size: 200% auto;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.sparkle {
+  position: relative;
+}
+
+.sparkle::after {
+  content: "✨";
+  position: absolute;
+  animation: sparkleMove 1.5s ease-in-out infinite;
+}
+
+@keyframes sparkleMove {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+  50% { transform: translate(10px, -10px) rotate(180deg); opacity: 1; }
+  100% { transform: translate(0, 0) rotate(360deg); opacity: 0; }
+}
+
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(242, 0, 255, 0.2);
+  box-shadow: inset 0 0 5px rgba(242, 0, 255, 0.628);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #8937f4ac;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #7003ff;
+}
+

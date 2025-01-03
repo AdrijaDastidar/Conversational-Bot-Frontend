@@ -1,0 +1,37 @@
+{
+  "name": "Conversation-Bot",
+  "description": "A conversational chatbot powered by AI",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "action": {
+    "default_title": "Conversation-Bot",
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "img-16.png",
+      "48": "img-48.png",
+      "128": "img-126.png"
+    }
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "identity"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "icons": {
+    "16": "img-16.png",
+    "48": "img-48.png",
+    "128": "img-126.png"
+  },
+  "commands": {
+    "open_popup": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+P"
+      },
+      "description": "Open the conversation bot popup"
+    }
+  }
+}
